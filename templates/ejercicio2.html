@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2 - Inicio de sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="tarjeta">
+        <h1>Inicio de sesión</h1>
+        <form method="POST" action="{{ url_for('ejercicio2') }}">
+            <label for="usuario">Ingresa tu nombre</label>
+            <input type="text" id="usuario" name="usuario" required
+                   value="{{ request.form.get('usuario', '') }}">
+
+            <label for="clave">Ingresa tu contraseña</label>
+            <input type="password" id="clave" name="clave" required
+                   value="{{ request.form.get('clave', '') }}">
+
+            <button type="submit">Verificar</button>
+        </form>
+
+        {% if mensaje %}
+        <div class="resultado">
+            <p>{{ mensaje }}</p>
+        </div>
+        {% endif %}
+
+        <a class="volver" href="{{ url_for('index') }}">&larr; Volver al menú</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú principal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="fondo-menu">
+
+    <div class="menu">
+
+        <h1>Examen de Felipe Gonzalez</h1>
+
+        <a class="boton boton-1" href="{{ url_for('ejercicio1') }}">
+            Ejercicio 1
+        </a>
+
+        <a class="boton boton-2" href="{{ url_for('ejercicio2') }}">
+            Ejercicio 2
+        </a>
+
+    </div>
+
+</body>
+</html>
+
+
